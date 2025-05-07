@@ -9,6 +9,7 @@ const updateuser = require("../../Controllers/Auth/update")
 const checkAuth = require("../../middleware/checkAuth")
 const hirerprofile = require("../../Controllers/Auth/hirerProfile")
 const renterprofile = require("../../Controllers/Auth/renterProfile")
+const google = require("../../Controllers/Auth/googleLogin")
 
 
 router.use("/register", register)  //path and file 
@@ -19,5 +20,6 @@ router.use("/update/:id", checkAuth, updateuser)
 router.use("/sendmail", nodemailer)
 router.use("/hirerprofile/:email" , hirerprofile)
 router.use("/renterprofile/:email" , renterprofile)
+router.use("/google", google )
 
 module.exports = router

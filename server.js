@@ -7,7 +7,7 @@ const routes = require("./routes")
 require('dotenv').config()
 const path = require("path");
 
-const port = process.env.PORT
+const port = process.env.PORT 
 const MongoUrl = process.env.MongoDbUrl
 
 backend.use(express.json());

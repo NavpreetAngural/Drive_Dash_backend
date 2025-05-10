@@ -20,6 +20,6 @@ router.use("/update/:id", checkAuth, updateuser)
 router.use("/sendmail", nodemailer)
 router.use("/hirerprofile/:email" , hirerprofile)
 router.use("/renterprofile/:email" , renterprofile)
-router.post("/google", google )
+// router.post("/google", google )
 
 module.exports = router

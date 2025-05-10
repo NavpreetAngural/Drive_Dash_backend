@@ -7,6 +7,7 @@ const deleteVehicle = require("../../Controllers/Vehicles/delete")
 const checkAuth = require("../../middleware/checkAuth");
 const updateVehicle = require("../../Controllers/Vehicles/update")
 const type = require("../../Controllers/Vehicles/type")
+const manageVehicles = require("../../Controllers/Vehicles/manageVehicles")
 
 const storage = multer.diskStorage({
     destination: "uploads",
@@ -22,5 +23,6 @@ router.get("/view", viewVehicles)
 router.delete("/delete/:id", checkAuth, deleteVehicle)
 router.put("/update/:id" ,  upload.single('vehicleImage'), updateVehicle)
 router.get("/type/:vehicleType" , type)
+router.use("/manage/:email" , manageVehicles)
 
 module.exports = router;

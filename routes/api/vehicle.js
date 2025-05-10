@@ -23,6 +23,6 @@ router.get("/view", viewVehicles)
 router.delete("/delete/:id", checkAuth, deleteVehicle)
 router.put("/update/:id" ,  upload.single('vehicleImage'), updateVehicle)
 router.get("/type/:vehicleType" , type)
-router.use("/manage/:email" , manageVehicles)
+router.get("/manage/:email" , manageVehicles)
 
 module.exports = router;

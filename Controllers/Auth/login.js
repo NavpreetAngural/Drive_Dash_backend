@@ -43,7 +43,8 @@ const login = async (req, res, next) => {
       jwtToken,
       role: existingUser.role,
       fullname: existingUser.fullname,
-      email : existingUser.email
+      email : existingUser.email,
+      phone : existingUser.phone
     });
 
   } catch (error) {

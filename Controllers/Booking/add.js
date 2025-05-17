@@ -18,7 +18,7 @@ const add = async (req, res, next) => {
         const bookData = new addBooking({
             fullname,
             email,
-            mobile,
+            phone,
             vehicleType,
             modificationDetails,
             licenseNo,

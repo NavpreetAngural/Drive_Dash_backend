@@ -8,7 +8,7 @@ const addBookingSchema = new Schema({
         type: String,
         required: true
     },
-    mobile: {
+    phone: {
         type: Number,
         required: true
     },

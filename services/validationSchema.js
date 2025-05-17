@@ -24,7 +24,7 @@ const contactValidation = Joi.object({
 const addBookingValidation = Joi.object({
     fullname: Joi.string().required(),
     email: Joi.string().required(),
-    mobile: Joi.number().required(),
+    phone: Joi.number().required(),
     vehicleType: Joi.string().required(),
     modificationDetails: Joi.string(),
     licenseNo: Joi.string().required(),

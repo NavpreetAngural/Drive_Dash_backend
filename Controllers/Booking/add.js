@@ -5,7 +5,7 @@ const add = async (req, res, next) => {
     try {
         const bookValues = await addBookingValidation.validateAsync(req.body)
         console.log(bookValues)
-        const { fullname , email, mobile, vehicleType, licenseNo, pickupDate, dropDate, modificationDetails } = bookValues;
+        const { fullname , email, phone, vehicleType, licenseNo, pickupDate, dropDate, modificationDetails } = bookValues;
         const existingEmail = await User.findOne({
             email
         })

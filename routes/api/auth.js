@@ -15,7 +15,7 @@ router.use("/register", register)  //path and file
 router.use("/login", login)
 router.use("/viewusers", checkAuth, view)
 router.use("/delete/:id", checkAuth, deleteuser)
-router.use("/update/:id", checkAuth, updateuser)
+router.use("/update/:id", updateuser)
 router.use("/sendmail", nodemailer)
 router.use("/hirerprofile/:email" , hirerprofile)
 router.use("/renterprofile/:email" , renterprofile)

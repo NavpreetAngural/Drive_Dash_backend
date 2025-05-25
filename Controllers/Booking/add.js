@@ -1,11 +1,12 @@
 const addBooking = require("../../models/addBooking")
 const User = require("../../models/User")
-const { addBookingValidation } = require("../../services/validationSchema")
+const { addBookingValidation } = require("../../services/validationSchema");
+const sendBookingEmail = require("../Auth/nodemailerBooking");
 const add = async (req, res, next) => {
     try {
         const bookValues = await addBookingValidation.validateAsync(req.body)
         console.log(bookValues)
-        const { fullname , email, phone, vehicleType, licenseNo, pickupDate, dropDate, modificationDetails } = bookValues;
+        const { fullname, email, phone, vehicleType, licenseNo, pickupDate, dropDate, modificationDetails } = bookValues;
         const existingEmail = await User.findOne({
             email
         })
@@ -26,12 +27,22 @@ const add = async (req, res, next) => {
             dropDate,
         })
         await bookData.save()
+
+
+        try {
+            sendBookingEmail(email, vehicleType, pickupDate, dropDate)
+        }
+        catch (emailerror) {
+            console.error("email sending failed", emailerror)
+        }
+
         res.status(200).json({
             success: true,
             message: "Booking Add successfully",
             data: bookValues,
         });
     } catch (error) {
-        next(error);}
+        next(error);
+    }
 };
 module.exports = add;

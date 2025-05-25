@@ -1,7 +1,7 @@
 const User = require("../../models/User")
 const bcrypt = require("bcryptjs")
 const { registrationValidation } = require("../../services/validationSchema");
-const sendEmail = require("./nodemailer");
+const sendLoginEmail = require("./nodemailerLogin");
 
 const register = async (req, res, next) => {
   try {
@@ -35,7 +35,7 @@ const register = async (req, res, next) => {
       await newUser.save()
 
       try{
-        await sendEmail(email,password , address);
+        await sendLoginEmail(email,password , address);
       }
       catch(emailerror){
         console.error("email sending failed" , emailerror)

@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 require('dotenv').config();
 
-const sendEmail = async (email, password, address) => {
+const sendLoginEmail = async (email, password, address) => {
     try {
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -33,4 +33,4 @@ const sendEmail = async (email, password, address) => {
     }
 };
 
-module.exports = sendEmail;
+module.exports = sendLoginEmail;

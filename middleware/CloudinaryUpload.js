@@ -6,7 +6,7 @@ const cloudinary = require("../utils/Cloudinary");
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'epic-media', // 🔥 Folder in Cloudinary where files go
+    folder: 'drive_dash', // 🔥 Folder in Cloudinary where files go
     allowed_formats: ['jpg', 'png', 'jpeg', 'mp4'],
     transformation: [{ quality: 'auto' }],
   },

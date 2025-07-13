@@ -36,6 +36,9 @@ const addVehicleSchema = new Schema({
     details: {
         type: String,
         required: true
+    },
+    url:{
+        type:String
     }
 })
 

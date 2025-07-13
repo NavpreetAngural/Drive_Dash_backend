@@ -37,6 +37,7 @@ const add = async (req, res, next) => {
             rentPerDay,
             details,
             email,
+            url: req.file.path,
         });
 
         await addData.save();
